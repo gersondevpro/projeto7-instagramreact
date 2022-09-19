@@ -1,15 +1,21 @@
 import React from "react"
 
 function Post(props) {
+    const curtidas = props.numeroCurtidas
     let [contador, setContador] = React.useState(props.numeroCurtidas)
+    let [classeCurtida, setClasseCurtida] = React.useState("")
 
-    
     function acrescentarCurtida() {
-        setContador(contador + 1)
+        if (contador === curtidas) {
+            setContador(contador + 1)
+            setClasseCurtida('red')
+        } else {
+            setContador(contador - 1)
+        }
     }
 
     function salvarPost() {
-        
+
     }
 
     return (
@@ -23,19 +29,19 @@ function Post(props) {
                 <ion-icon name="ellipsis-horizontal"></ion-icon>
             </div>
 
-            <img src={props.imagem} class="img-principal" alt="Imagem postada"/>
+            <img src={props.imagem} class="img-principal" alt="Imagem postada" />
 
             <div class="footer-post">
                 <div class="icones-img-principal">
                     <div>
-                        <ion-icon name="heart" class="heart black" onClick={acrescentarCurtida}></ion-icon>
+                        <ion-icon name="heart-outline" onClick={acrescentarCurtida}></ion-icon>
                         <ion-icon name="chatbubble-outline"></ion-icon>
                         <ion-icon name="paper-plane-outline"></ion-icon>
                     </div>
                     <ion-icon class="salvar branco" name="bookmark-outline" onClick={salvarPost}></ion-icon>
                 </div>
                 <div class="likes">
-                    <img src={props.iconeCurtida} alt="um perfil de quem curtiu"/>
+                    <img src={props.iconeCurtida} alt="um perfil de quem curtiu" />
                     <p>Curtido por <span>{props.quemCurtiu}</span> e <span>outras {contador} pessoas</span></p>
                 </div>
             </div>
