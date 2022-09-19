@@ -1,6 +1,6 @@
 body {
     background-color: #e5e5e5;
-    font-family: "Roboto";
+    font-family: 'Roboto', sans-serif;  
 }
 
 .background-nav {
@@ -151,7 +151,13 @@ body {
 .catana {
     width: 56px;
     height: 56px;
+    border-radius: 28px;
     margin-right: 17px;
+    cursor: pointer;
+}
+
+span {
+    cursor: pointer;
 }
 
 .top-menu-right :nth-child(1) {
@@ -300,10 +306,19 @@ body {
     margin-left: 15px;
 }
 
-.icones-img-principal img {
+.salvar {
     width: 13px;
     height: auto;
     margin-right: 17px;
+    cursor: pointer;
+}
+
+.icones-img-principal div :nth-child(1){
+    cursor: pointer;
+}
+
+.red {
+    color: red;
 }
 
 .likes {
